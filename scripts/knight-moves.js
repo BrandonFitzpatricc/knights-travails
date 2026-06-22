@@ -4,8 +4,21 @@ const knightMoves = (startPosition, endPosition) => {
   const queue = [new Position(startPosition, [startPosition])];
   const visited = [new Position(startPosition, endPosition)];
 
-  while (queue.length > 0) {
+  while (true) {
     const currentPosition = queue.shift();
+
+    const adjacentPositions = getAdjacentPositions(currentPosition);
+
+    for (const position of adjacentPositions) {
+      if (JSON.stringify(position.value) === JSON.stringify(endPosition)) {
+        return position.path;
+      }
+
+      if (!visited.includes(position)) {
+        queue.push(position);
+        visited.push(position);
+      }
+    }
   }
 };
 
@@ -47,3 +60,5 @@ function getAdjacentPositions(position) {
 
   return adjacentPositions;
 }
+
+export { knightMoves };
