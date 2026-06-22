@@ -2,7 +2,7 @@ import { Position } from "./position.js";
 
 const knightMoves = (startPosition, endPosition) => {
   const queue = [new Position(startPosition, [startPosition])];
-  const visited = [new Position(startPosition, endPosition)];
+  const visited = [new Position(startPosition, [startPosition])];
 
   while (true) {
     const currentPosition = queue.shift();
