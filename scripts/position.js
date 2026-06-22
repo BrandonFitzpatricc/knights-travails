@@ -14,4 +14,10 @@ class Position {
   get path() {
     return this.#path;
   }
+
+  set path(value) {
+    this.#path = value;
+  }
 }
+
+export { Position };
