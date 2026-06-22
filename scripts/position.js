@@ -1,3 +1,5 @@
+// The purpose of this object is to save each position with the path used to reach it,
+// as this will be necessary for returning the shortest path once it has been discovered.
 class Position {
   #value;
   #path;
